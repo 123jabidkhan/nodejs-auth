@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+  </head>
+  <body>
+    <h1 style="color: blue;text-align: center;background-color:black;">Signup</h1>
+    <div style="text-align: center;">
+      <form method="POST" action="/user">
+        <div class="email">
+          <label for="email" >Email : </label>
+          <input style="font-size: large" type="text" name="email" />
+        </div>
+        &nbsp;
+        <div class="username">
+          <label for="username">Username : </label>
+          <input style="font-size: large" type="text" name="username" />
+        </div>  
+        &nbsp;
+        <div class="password">
+          <label for="password" >Password : </label>
+          <input style="font-size: large" name="password" />
+        </div>
+        &nbsp;
+       
+
+        <div class="createproduct">
+          <button
+            type="submit"
+            style="
+              padding: 5px;
+              width: 300px;
+              background-color: rgb(108, 240, 108);
+            "
+          >
+            Signup
+          </button>
+        </div>
+      </form>
+
+      <!-- products data display -->
+        <h3 style="color: rgb(22, 199, 22);">Total Users :</h3>
+      <div>
+      
+      </div>
+    </div>
+  </body>
+</html>

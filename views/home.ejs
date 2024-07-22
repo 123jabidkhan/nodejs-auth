@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <div>
+      <h1 style="color: blue;text-align: center;background-color:black;">Home</h1>
+      <h3>Create Product</h3>
+      <form method="POST" action="/api/products/create-product">
+        <div class="productName">
+          <label for="productName" >Product Name : </label>
+          <input style="font-size: large" type="text" name="productName" />
+        </div>
+        &nbsp;
+        <div class="productColor">
+          <label for="productColor">Product Color : </label>
+          <input style="font-size: large" type="text" name="productColor" />
+        </div>  
+        &nbsp;
+        <div class="productStock">
+          <label for="productStock" >Product Stock : </label>
+          <input style="font-size: large" type="number" name="productStock" />
+        </div>
+        &nbsp;
+        <div class="productRating">
+          <label for="productRating" 
+            >Product Rating :
+          </label>
+          <input style="font-size: large" type="number" name="productRating"/>
+        </div>
+        &nbsp;
+
+        <div class="createproduct">
+          <button
+            type="submit"
+            style="
+              padding: 5px;
+              width: 300px;
+              background-color: rgb(108, 240, 108);
+            "
+          >
+            Create
+          </button>
+        </div>
+      </form>
+
+      <!-- products data display -->
+        <h3 style="color: rgb(22, 199, 22);">Total Products List :</h3>
+      <div>
+        <% if (locals.products) { %>
+        <table>
+          <thead>
+            <th>S. No</th>
+            <th>Product Name</th>
+            <th>Product Color</th>
+            <th>Product Stock</th>
+            <th>Product Rating</th>
+
+          </thead>
+          <tbody>
+            <% products.forEach((pro, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= pro.productName %></td>
+              <td><%= pro.productColor %></td>
+              <td><%= pro.productStock %></td>
+              <td><%= pro.productRating %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
